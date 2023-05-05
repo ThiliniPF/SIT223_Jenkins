@@ -1,1 +1,28 @@
-
+pipeline
+{
+    agent any
+    stages
+    {
+        stage('Build')
+        {
+            steps
+            {
+                echo "Build started and completed"
+            }
+        }
+        stage('test')
+        {
+            steps
+            {
+                echo "Test started and completed"
+            }
+        }
+        stage('Deploy')
+        {
+            steps
+            {
+                echo "Deployment started and completed"
+            }
+        }
+    }
+}
