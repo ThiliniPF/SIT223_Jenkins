@@ -22,10 +22,8 @@ pipeline
         {
             steps
             {
-                withMaven(
-                    maven: '1298.v43b_82f220a_e9'
-                    mvn: 'clean verify sonar:sonar'
-                )  
+                withMaven(maven: 'maven_1298.v43b_82f220a_e9')
+
             }
         }
     }
