@@ -18,13 +18,6 @@ pipeline
                 sh 'mvn integration-test'
             }
         }
-        stage('Code Analysis')
-        {
-            steps
-            {
-                withMaven(maven: 'maven_1298.v43b_82f220a_e9')
-
-            }
-        }
+        
     }
 }
