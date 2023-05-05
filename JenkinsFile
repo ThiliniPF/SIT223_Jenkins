@@ -7,21 +7,25 @@ pipeline
         {
             steps
             {
-                echo "Build started and completed"
+                sh 'mvn clean package'
             }
         }
-        stage('test')
+        stage('Unit and Integration Tests')
         {
             steps
             {
-                echo "Test started and completed"
+                sh 'mvn test'
+                sh 'mvn integration-test'
             }
         }
-        stage('Deploy')
+        stage('Code Analysis')
         {
             steps
             {
-                echo "Deployment started and completed"
+                withMaven(
+                    maven: '1298.v43b_82f220a_e9'
+                    goals: 'clean verify sonar:sonar'
+                )  
             }
         }
     }
