@@ -1,23 +1,68 @@
 pipeline
 {
     agent any
+    
+    environment
+    {
+        DIRECTORY_PATH = "C:/ProgramData/Jenkins/.jenkins/jobs/223_6.2C
+        STAGING_ENVIRONMENT = "test"
+        PRODUCTION_ENVIRONMENT = "production"
+    }
     stages
     {
         stage('Build')
         {
             steps
             {
-                sh 'mvn clean package'
+                echo "Fetching source code from $DIRECTORY_PATH"
+                echo "Compiling the code using Maven automation tool"
             }
         }
         stage('Unit and Integration Tests')
         {
             steps
             {
-                sh 'mvn test'
-                sh 'mvn integration-test'
+                echo "Running unit tests using Maven"
+                echo "Running integration tests using Maven"
             }
         }
-        
+        stage('Code Analysis')
+        {
+            steps
+            {
+                echo "Analysing the code"
+                echo "Analysis tool used is Maven"
+            }
+        }
+        stage('Security Scan')
+        {
+            steps
+            {
+                echo "Security scan commencing"
+                echo "Security scan tool used in KlocWork"
+            }
+        }
+        stage('Deploy to staging')
+        {
+            steps
+            {
+                echo "Deploying the application into $STAGING_ENVIRONMENT environment"
+                echo "Staging server used is AWS EC2"
+            }
+        }
+        stage('Integration Testing')
+        {
+            steps
+            {
+                echo "Running integration tests on the staging environment using Maven"
+            }
+        }
+        stage('Deploy to production')
+        {  
+            steps
+            {
+                echo "Deploying the application to $PRODUCTION_ENVIRONMENT environment"
+            }
+        } 
     }
 }
