@@ -25,6 +25,21 @@ pipeline
                 echo "Running unit tests using Maven"
                 echo "Running integration tests using Maven"
             }
+            post
+            {
+                success
+                {
+                    mail to: "tpf0710@gmail.com",
+                    subject: "Integration testing status"
+                    body: "Testing successful"
+                }
+                failure
+                {
+                    mail to: "tpf0710@gmail.com"
+                    subject: "Integration testing status"
+                    body: "Testing failed"
+                }
+            }
         }
         stage('Code Analysis')
         {
@@ -41,6 +56,21 @@ pipeline
                 echo "Security scan commencing"
                 echo "Security scan tool used in Klocwork"
             }
+            post
+            {
+                success
+                {
+                    mail to: "tpf0710@gmail.com",
+                    subject: "Integration testing status"
+                    body: "Testing successful"
+                }
+                failure
+                {
+                    mail to: "tpf0710@gmail.com"
+                    subject: "Integration testing status"
+                    body: "Testing failed"
+                }
+            }
         }
         stage('Deploy to staging')
         {
@@ -55,6 +85,21 @@ pipeline
             steps
             {
                 echo "Running integration tests on the staging environment using Maven"
+            }
+            post
+            {
+                success
+                {
+                    mail to: "tpf0710@gmail.com",
+                    subject: "Integration testing status"
+                    body: "Testing successful"
+                }
+                failure
+                {
+                    mail to: "tpf0710@gmail.com"
+                    subject: "Integration testing status"
+                    body: "Testing failed"
+                }
             }
         }
         stage('Deploy to production')
