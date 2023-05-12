@@ -4,7 +4,7 @@ pipeline
     
     environment
     {
-        DIRECTORY_PATH = "C:/ProgramData/Jenkins/.jenkins/jobs/223_6.2C
+        DIRECTORY_PATH = "C:/ProgramData/Jenkins/.jenkins/jobs/223_6.2C"
         STAGING_ENVIRONMENT = "test"
         PRODUCTION_ENVIRONMENT = "production"
     }
@@ -30,7 +30,7 @@ pipeline
         {
             steps
             {
-                echo "Analysing the code"
+                echo "Analyzing the code"
                 echo "Analysis tool used is Maven"
             }
         }
@@ -39,7 +39,7 @@ pipeline
             steps
             {
                 echo "Security scan commencing"
-                echo "Security scan tool used in KlocWork"
+                echo "Security scan tool used in Klocwork"
             }
         }
         stage('Deploy to staging')
