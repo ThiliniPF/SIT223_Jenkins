@@ -30,13 +30,13 @@ pipeline
                 success
                 {
                     mail to: "tpf0710@gmail.com",
-                    subject: "Integration testing status"
+                    subject: "Integration testing status",
                     body: "Testing successful"
                 }
                 failure
                 {
-                    mail to: "tpf0710@gmail.com"
-                    subject: "Integration testing status"
+                    mail to: "tpf0710@gmail.com",
+                    subject: "Integration testing status",
                     body: "Testing failed"
                 }
             }
@@ -61,13 +61,13 @@ pipeline
                 success
                 {
                     mail to: "tpf0710@gmail.com",
-                    subject: "Integration testing status"
+                    subject: "Integration testing status",
                     body: "Testing successful"
                 }
                 failure
                 {
-                    mail to: "tpf0710@gmail.com"
-                    subject: "Integration testing status"
+                    mail to: "tpf0710@gmail.com",
+                    subject: "Integration testing status",
                     body: "Testing failed"
                 }
             }
@@ -91,13 +91,13 @@ pipeline
                 success
                 {
                     mail to: "tpf0710@gmail.com",
-                    subject: "Integration testing status"
+                    subject: "Integration testing status",
                     body: "Testing successful"
                 }
                 failure
                 {
-                    mail to: "tpf0710@gmail.com"
-                    subject: "Integration testing status"
+                    mail to: "tpf0710@gmail.com",
+                    subject: "Integration testing status",
                     body: "Testing failed"
                 }
             }
